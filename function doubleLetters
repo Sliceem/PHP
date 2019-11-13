@@ -1,0 +1,18 @@
+function doubleLetters($word) {
+    $var = null;
+    $arr = [];
+    for ($i = 0; $i < strlen($word); $i++){
+         $letter = $word[$i];
+         if ($letter == end($arr)){
+            echo "true";
+            $var = true;
+            return $var;
+            break;
+     } 
+         else $arr[] = $letter;
+ }
+ if($var == null){
+     echo "false";
+     return false;
+ }
+ }
