@@ -1,3 +1,5 @@
+My function:
+-------------------------------------------
 function oddProduct($arr) {
 	$odd_arr = [];
 	foreach($arr as $ar){
@@ -7,3 +9,10 @@ function oddProduct($arr) {
 	}
 	return array_product($odd_arr);
 }
+-------------------------------------------
+Others :
+-------------------------------------------
+function oddProduct($arr) {
+  return array_product(array_filter($arr, function($num) {return $num & 1;}));
+}
+-------------------------------------------
