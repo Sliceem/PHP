@@ -1,0 +1,27 @@
+My function
+-------------------------------------
+function amplify($num) {
+    $array = [];
+	foreach (range(1, $num) as $number) {
+        if ($number % 4 == 0){
+            $array[] = $number*10;
+        }
+        else $array[] = $number;
+    }
+    return $array;
+}
+-------------------------------------
+Others:
+-------------------------------------
+function amplify($num) {
+	return array_map(function($a){
+		return $a%4==0 ? $a * 10 : $a;
+	}, range(1,$num));
+}
+-------------------------------------
+function amplify($num) {
+	$arr = [];
+	foreach(range(1, $num) as $i) $i%4==0 ? array_push($arr, $i*10):array_push($arr, $i);
+	return $arr;
+}
+-------------------------------------
