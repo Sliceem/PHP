@@ -1,0 +1,9 @@
+function oddProduct($arr) {
+	$odd_arr = [];
+	foreach($arr as $ar){
+		if($ar % 2 == 1){
+			$odd_arr[] = $ar; 
+		}
+	}
+	return array_product($odd_arr);
+}
