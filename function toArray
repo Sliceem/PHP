@@ -1,0 +1,26 @@
+function toArray($str) {
+    $new_arr = [];
+    $arr = explode(", ", $str);
+	if(empty($str)){
+		return $new_arr;
+	}
+	else
+    foreach($arr as $ar){
+        $new_arr[] = $ar; 
+    }
+    return $new_arr;
+}
+----------------------------------
+Others:
+function toArray($str) {
+	return array_filter(explode(', ', $str));
+}
+----------------------------------
+function toArray($str) {
+	return $str ? explode(", ", $str) : [];
+}
+----------------------------------
+function toArray($str) {
+	if(strpos($str, ",") == false) return [];
+	return explode(", ", $str);
+}
