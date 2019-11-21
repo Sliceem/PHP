@@ -1,0 +1,26 @@
+function hasSpaces($str) {
+	$array = str_split($str);
+	foreach($array as $arr){
+		if ($arr === " "){
+			return true;
+			break;
+		}
+	}
+	return false;
+}
+--------------------------------
+Others:
+function hasSpaces($str) {
+	return strpos($str,' ') !== false;
+}
+--------------------------------
+function hasSpaces($str) {
+	$strStrip = str_replace(' ', '', $str);
+	return ($strStrip !== $str);
+}
+--------------------------------
+function hasSpaces($str) {
+	$arr = explode(" ", $str);
+	return (count($arr) > 1 ? true : false);
+}
+--------------------------------
