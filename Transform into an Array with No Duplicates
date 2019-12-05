@@ -1,0 +1,41 @@
+function set($arr) {
+	$uniq = array_unique($arr);
+	$new_arr = [];
+	foreach($uniq as $uni){
+		$new_arr[] = $uni;
+	}
+	return $new_arr;
+}
+------------------------------
+function set($arr) {
+	return array_values(array_unique($arr));
+}
+---------------------------------
+function set($arr) {
+	$sArr = array();
+	for($i = 0; $i < sizeof($arr); $i++)
+	{
+		if(empty($sArr)) array_push($sArr, $arr[$i]); 
+		else
+		{
+			for($z = 0; $z <= sizeof($sArr); $z++)
+			{
+				if($arr[$i] == $sArr[$z]) break;
+					
+				else
+					if($z == sizeof($sArr)-1) array_push($sArr, $arr[$i]);	
+			}
+		}
+	}
+	return $sArr;
+}
+---------------------------------
+function set($arr) {
+	$arrUnique = [];
+	for($i = 0; $i < count($arr); $i++){
+		if(in_array($arr[$i], $arrUnique)) continue;
+		else array_push($arrUnique, $arr[$i]);
+	}
+	return $arrUnique;
+}
+-----------------------------------
