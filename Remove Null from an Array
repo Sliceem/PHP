@@ -1,0 +1,30 @@
+Remove Null from an Array
+-----------------------------
+function removeNull($arr) {
+    $new_arr = [];
+    foreach($arr as $ar){
+        if ($ar != null){
+            $new_arr[] = $ar;
+        }
+    }
+    var_dump($new_arr);
+    return $new_arr;
+}
+
+
+
+-------------------------------
+function removeNull($arr) {
+	return array_values(array_filter($arr));
+}
+-------------------------------
+function removeNull($arr) {
+	
+	foreach ($arr as $key => $value) {
+		if ($value === null) {
+			unset($arr[$key]);
+		}
+	}
+	
+	return array_values($arr);
+}
