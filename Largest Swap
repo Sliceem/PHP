@@ -1,0 +1,39 @@
+function largestSwap($num) {
+    $arr = str_split ( $num);
+  $arr1 = array_reverse($arr);
+    $arr = implode('', $arr1);
+  if ($num >= $arr){
+    return true;
+    }
+    else return false;
+}
+------------------------------
+
+function largestSwap($num) {
+	$strNum = strval($num);
+	$swapNum = $strNum[1]."".$strNum[0];
+	$actualSwapNum = intval($swapNum);
+	
+	if($actualSwapNum <= $num){
+		return true;
+	}
+	return false;
+}
+
+----------------------------
+function largestSwap($num) {
+	return $num >= (int) strrev($num);
+}
+
+----------------------------
+function largestSwap($num) {
+	$temp = $num;
+	$rev = 0;
+	while($temp>1)
+	{
+		$rev *= 10;
+		$rev += $temp%10;
+		$temp /= 10;
+	}
+	return $rev > $num ? false : true;
+}
