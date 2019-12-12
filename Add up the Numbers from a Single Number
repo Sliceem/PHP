@@ -1,0 +1,26 @@
+function addUp($num) {
+	$var = 0;
+  while ($num != 0){
+		$var +=$num;
+		$num--;
+	}
+	return $var;
+}
+----------------------------
+function addUp($num) {
+  if ($num === 1) return 1;
+	return $num + addUp($num - 1);
+}
+---------------------------
+function addUp($num) {
+	$sum = 0;
+  for($i=$num; $i>0; $i--){
+		$sum += $i;
+	}
+	return $sum;
+}
+--------------------------
+function addUp($num) {
+  return $num === 1 ? $num : $num + addUp($num - 1);
+}
+-------------------------
