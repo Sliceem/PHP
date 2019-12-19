@@ -1,0 +1,40 @@
+function convertToDecimal($perc) {
+	$arrayNew = [];
+foreach($perc as $arr){
+    $arrayNew[]= floatval(substr($arr, 0, -1) / 100);
+}
+return $arrayNew;
+}
+--------------------------------------
+function convertToDecimal($perc) {
+	return array_map(function($v) {
+		return str_replace('%', '', $v) / 100;
+	}, $perc);
+}
+--------------------------------------
+function convertToDecimal($perc) {
+	$arr=[];
+	foreach($perc as $v)
+	{
+		echo $v;
+		array_push($arr,$v/100);
+	}
+	return $arr;
+	
+}
+--------------------------------------
+function convertToDecimal($perc) {
+	
+	$decimalArray = [];
+	
+	
+	foreach($perc as $value){
+		
+		$decimalValue = str_replace("%","",$value);
+		$decimalValue = $decimalValue * 0.01;
+		array_push($decimalArray,$decimalValue);	
+	}
+	
+	return $decimalArray;
+	
+}
