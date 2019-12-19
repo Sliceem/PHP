@@ -1,0 +1,26 @@
+function filterDigitLength($arr, $num) {
+	$end_arr = [];
+	foreach($arr as $ar){
+		if(strlen($ar) == $num){
+			$end_arr[] = $ar;
+		}
+	}
+	return $end_arr;
+}
+----------------------------------------
+function filterDigitLength($arr, $num) {
+  foreach($arr as $k => $a) {
+    if (strlen(strval($a)) != $num) {
+      unset($arr[$k]);
+    }
+  }
+  return array_values($arr);
+}
+---------------------------------------
+function filterDigitLength($arr, $num) {
+	return array_values(array_filter($arr,function ($v) use ($num){
+		$digits = strlen(strval($v));
+		return $num == $digits;
+	}));
+}
+--------------------------------------
