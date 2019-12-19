@@ -1,0 +1,33 @@
+function doubleChar($str) {
+	$arr2 = [];
+  $str_arr = str_split($str);
+ foreach($str_arr as $arr){
+     $arr2[] = str_repeat($arr, 2);
+ }
+return implode('',$arr2);
+}
+--------------------------------
+function doubleChar($str) {
+  return preg_replace('/(.)/', '$0$0', $str);
+}
+--------------------------------
+function doubleChar($str) {
+  $char_arr = str_split($str);  
+  $double_char_str = "";
+	foreach($char_arr as $char)
+    $double_char_str .= $char . $char;
+  
+  return $double_char_str;
+}
+--------------------------------
+function doubleChar($str)
+{
+    $strOut = "";
+​
+    for ($i=0; $i < strlen($str); $i++) {
+        $char = substr($str, $i, 1);
+        $strOut .= $char . $char;
+    }
+​
+    return $strOut;
+}
