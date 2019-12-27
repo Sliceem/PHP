@@ -1,0 +1,35 @@
+function arrayOfMultiples($num, $length) {
+	foreach(range($num, $num * $length, $num) as $new){
+		$arr[] = $new;
+	}
+	return $arr;
+}
+---------------------------------------------
+function arrayOfMultiples($num, $length) {
+	return array_map(function($x) use ($num) {
+		return $x * $num;
+	}, range(1, $length));
+}
+---------------------------------------------
+function arrayOfMultiples($n, $l) {
+  for ($i=1; $i<=$l; $i++)
+    $r[] = $n * $i;
+  
+  return $r;
+}
+---------------------------------------------
+if (preg_match("/^\d+(\.\d+)?$/", $num)) {
+		if (preg_match("/^\d+$/", $length)) {
+			$arr = [];
+			array_push($arr, $num);
+			
+			for ($a = 2; $a <= $length; $a++)
+				array_push($arr, $num * $a);
+			
+			return $arr;
+		} else
+			return false;
+	} else
+		return false;
+}
+---------------------------------------------
