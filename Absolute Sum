@@ -1,0 +1,33 @@
+Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+
+function getAbsSum($arr) {
+	return array_sum(array_map('abs', $arr));
+}
+-------------------------------------------
+function getAbsSum($arr) {
+  $sum = 0;
+  foreach ($arr as $num)
+    $sum += abs($num);
+  
+	return $sum;
+}
+-------------------------------------------
+function getAbsSum($arr) {
+  return array_reduce($arr, function($total, $element){
+	return $total += abs($element);
+  });
+}
+-------------------------------------------
+function getAbsSum($arr) {
+  $retValue = 0;
+  foreach($arr as $value) {
+    if($value < 0) {
+      $newValue = $value * -1;
+      $retValue = $retValue + $newValue;
+    } else {
+      $retValue = $retValue + $value; 
+    }
+  }
+  return $retValue;
+}
+------------------------------------------ 
